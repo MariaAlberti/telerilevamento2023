@@ -12,7 +12,6 @@ setwd("C:/lab/") # windows
 
 # import
 l2011 <- brick("p224r63_2011_masked.grd")
-l2011
 
 # plot
 plot(l2011)
@@ -71,3 +70,52 @@ plot(l2011[[3]], col=clr)
 
 cln <- colorRampPalette(c("red", "orange", "yellow")) (100)
 plot(l2011[[4]], col=cln)
+
+# plot RGB layers
+plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="lin")
+plotRGB(l2011, r=3, g=2, b=4, stretch="lin")
+
+plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
+
+par(mfrow=c(2,1))
+plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
+
+# exercise, plot NIR band
+plot(l2011[[4]], col=cl)
+plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
+# NIR on red
+plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
+# NIR on green
+plotRGB(l2011, r=3, g=4, b=2, stretch="lin")
+# NIR on blue
+plotRGB(l2011, r=3, g=2, b=4, stretch="lin")
+
+#import 1988 data
+l1988 <- brick("p224r63_1988_masked.grd")
+
+# plot 1988
+plot(l1988)
+
+# Excercise: plot in RGB space
+plotRGB(l1988, r=3, g=2, b=1, stretch="lin")
+plotRGB(l1988, 4, 3, 2, stretch="lin")
+
+# multiframe
+par(mfrow=c(2,1))
+plotRGB(l1988, 4, 3, 2, stretch="lin")
+plotRGB(l2011, 4, 3, 2, stretch="lin")
+
+plotRGB(l1988, r=4, g=3, b=2, stretch="hist")
+
+# multiframe
+par(mfrow=c(2,2))
+plotRGB(l1988, r=4, g=3, b=2, stretch="lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
+plotRGB(l1988, r=4, g=3, b=2, stretch="hist")
+plotRGB(l2011, r=4, g=3, b=2, stretch="hist")
+
+
+
+
