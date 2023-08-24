@@ -8,7 +8,7 @@ library(raster)
 # Set working directory
 #setwd("~/lab/") # Linux
 # setwd("/Users/emma/desktop/lab") #mac
-setwd("C:/lab/") # windows
+setwd("D:.../.../...") # windows
 
 # import
 l2011 <- brick("p224r63_2011_masked.grd")
