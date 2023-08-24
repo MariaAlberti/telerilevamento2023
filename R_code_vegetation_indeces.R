@@ -1,7 +1,7 @@
 library(raster)
 
-setwd("~/lab/") # Linux
-# setwd("C:/lab/") # Windows
+# setwd("~/lab/") # Linux
+setwd("..:/.../...") # Windows
 # setwd("/Users/name/Desktop/lab/") # Mac
 
 # Exercise: import the first file -> defor1_.jpg -> give it the name l1992
