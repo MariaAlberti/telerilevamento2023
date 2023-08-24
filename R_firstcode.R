@@ -41,7 +41,7 @@ plot(l2011$B4_sre, col=clc)
 clg <- colorRampPalette(c("dark green", "green", "light green")) (100)
 #plot(l2011$B2_sre, col=clg)
 
-# plot differentcolours
+# plot differents colours
 cl1 <- colorRampPalette(c("cyan4", "brown2", "darkgreen")) (100)
 plot(l2011, col=cl1)
 
@@ -116,6 +116,45 @@ plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 plotRGB(l1988, r=4, g=3, b=2, stretch="hist")
 plotRGB(l2011, r=4, g=3, b=2, stretch="hist")
 
+# Histogram stretching
+par(mfrow=c(2,1))
+plotRGB(l2011, r=3, g=2, b=1, stretch="Hist")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
 
+# Linear vs. Histogram stretching
+par(mfrow=c(2,1))
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
+
+# Exercise: plot the NIR band
+plot(l2011[[4]])
+plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")
+plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")
+
+# Exercise: import the 1988 image
+l1988 <- brick("p224r63_1988_masked.grd")
+
+# Exercise: plot in RGB space (natural colours)
+plotRGB(l1988, r=3, g=2, b=1, stretch="Lin")
+plotRGB(l1988, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l1988, 4, 3, 2, stretch="Lin")
+
+# multiframe
+par(mfrow=c(2,1))
+plotRGB(l1988, 4, 3, 2, stretch="Lin")
+plotRGB(l2011, 4, 3, 2, stretch="Lin")
+
+dev.off()
+## null device
+## 1
+plotRGB(l1988, 4, 3, 2, stretch="Hist")
+# multiframe with 4 images
+par(mfrow=c(2,2))
+plotRGB(l1988, 4, 3, 2, stretch="Lin")
+plotRGB(l2011, 4, 3, 2, stretch="Lin")
+plotRGB(l1988, 4, 3, 2, stretch="Hist")
+plotRGB(l2011, 4, 3, 2, stretch="Hist")
 
 
