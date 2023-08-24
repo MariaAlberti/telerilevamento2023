@@ -49,6 +49,7 @@ plot(l2011, col=cl1)
 
 # export graph, pdf function
 pdf(file = "myfirstgraph.pdf")
+png(file = "myfirstgraph.pdf")
 plot(l2011$B4_sre, col=cl)
 dev.off()
 
