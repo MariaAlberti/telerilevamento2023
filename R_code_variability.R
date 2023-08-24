@@ -7,8 +7,8 @@ library(patchwork) # multiframe with ggplot2 graphs
 # install.packages("viridis")
 library(viridis)
 
-setwd("~/lab/") # Linux
-# setwd("C:/lab/") # Windows
+#↓ setwd("~/lab/") # Linux
+setwd(".../.../...") # Windows
 # setwd("/Users/name/Desktop/lab/") # Mac
 
 # Exercise: import the Similaun image
