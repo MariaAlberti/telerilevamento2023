@@ -297,7 +297,7 @@ dev.off()
 cluster18 <- kmeans_result18$cluster
 cluster22 <- kmeans_result22$cluster
 
-## Calcola il conteggio dei pixel per ciascuna classe
+## Calculate the number of pixel for each class
 pixel_class18 <- table(cluster18)
 pixel_class22 <- table(cluster22)
 
