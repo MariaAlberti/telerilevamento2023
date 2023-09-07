@@ -224,11 +224,11 @@ dev.off()
 ##################### ------------ ####################### -------------
 
 ###### Difference between bands
-# red
+# red band
 diff_red <- c18$b1_red - c22$b1_red
-# green
+# green band
 diff_green <- c18$b2_green - c22$b2_green
-# blue
+# blue blue
 diff_blue <- c18$b3_blue - c22$b3_blue
 
 # plot
@@ -236,17 +236,8 @@ extent_img <- extent(diff_red)
 jpeg("difference_RGB.jpg", 900, 900)
 par(mfrow=c(1,3))
 plot(diff_red, col=cl) + title("2018 vs 2022, red band")
-# plot(diff_red, col=cl, axes = FALSE) + title("2018 vs 2022, red band")
-# axis(1, at = seq(extent_img@xmin, extent_img@xmax, by = 100)) # Asse x
-# axis(2, at = seq(extent_img@ymin, extent_img@ymax, by = 100)) 
 plot(diff_green, col=cl) + title("2018 vs 2022, green band")
 plot(diff_blue, col=cl) + title("2018 vs 2022, blue band")
-dev.off()
-
-jpeg("diff_red.jpg", 900, 900)
-plot(diff_red, col=cl, axes = FALSE) + title("Difference on red band")
-axis(1, at = seq(extent_img@xmin, extent_img@xmax, by = 100)) # Asse x
-axis(2, at = seq(extent_img@ymin, extent_img@ymax, by = 100)) 
 dev.off()
 
 ##################### ------------ ####################### -------------
